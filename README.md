@@ -3,8 +3,8 @@
 ## Team members
 
 - Pourya Momtaz
-- Item 2
-- Item 3
+- Xiaoxuan (Rose) Han
+- Yiran Wang
 
 ## Public Health Data Analytics Datathon
 
