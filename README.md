@@ -31,13 +31,13 @@ Can we predict BMI categories using machine learning techniques based on the giv
 
 We define some thresholds on BMI on the first dataset to categorize them, so it would be easier to encode. Then we're going to use clustering methods to answer the questions and for the first question we'll train a classifier to learn a relation.
 
-#Introduction:
+# Introduction
 The Body Mass Index(BMI) is a crucial international standard frequently used to gauge the extent of obesity in humans and can be used to assess a person's nutritional and physical health. We use several health factors to forecast the level of BMI because a higher BMI may be linked to some cancerous conditions.
 
-#Data engineering process:
+# Data engineering process
 The BMI dataset contains 25,355 entries, comprising 14,896 females and 8,639 males. We use the duplication and deleting the null value for data cleaning. For better performance in machine learning, we optimize the gender variable into the dummy variable(‘Male’=0 and ‘Female’=1). Based on the international standard for BMI, we categorized BMI values into five levels: underweight(BMI<18.5), healthy(18.5-24.9), overweight(25-29.9), obese (30-39.9), and severely obese(BMI>=40), and encoding these five levels to 0-4.
 
-#Analysis:
+# Analysis
 The K-Nearest Neighbours algorithm with k=18 is used in our analysis to forecast BMI levels. Due to the KNN method's superior performance, we divided the dataset into 70% training data and 30% testing data. 
 
 Our first idea is to exclude the 'Height' and 'Weight' variables from the analysis since BMI is already calculated from these two features. The reason for excluding them is to avoid multicollinearity in the model. Multicollinearity occurs when predictor variables in a regression model are highly correlated, making it difficult to distinguish the individual effects of each predictor. In this case, 'Height' and 'Weight' are directly used to calculate BMI, so including them would introduce redundancy and could lead to instability in the model's coefficients.
