@@ -30,7 +30,3 @@ Can we predict BMI categories using machine learning techniques based on the giv
 # Methodology
 
 We define some thresholds on BMI on the first dataset to categorize them, so it would be easier to encode. Then we're going to use clustering methods to answer the questions and for the first question we'll train a classifier to learn a relation.
-
-# random test 
-
-random
