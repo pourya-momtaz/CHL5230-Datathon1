@@ -49,3 +49,8 @@ We begin by using the KNN estimator without height and weight. Only 30% of the t
 After adding the height and weight factors into the model, the model achieves an overall accuracy of 0.77 with k=20. This means the model correctly classified 77% BMI level based on health factors. 
 According to the classification report, "underweight" has a precision of 0.99, while "severely obese" has a precision of 1.00. The precision with other levels is less precise, followed by healthy (0.74), overweight (0.73), and obese (0.80). This demonstrates the model correctly identifying individuals as underweight and severely obese. Recall measures indicate whether a model can recognize every instance of a class. In our data set, the recall of a severely obese case is only 0.08, which may be due to an extremely uncommon severely obese instance. The model performs a wonderful job of recognizing most of the instances of that class, with the exception of the seriously obese, whose recall is in the range of 0.52 to 0.93. 
 
+Lung Cancer:
+First, we created a correlation heatmap to discover multicolinearities. Specifically, we have found that features of genetic risk, chest pain, alcohol usage, obesity, smoking, coughing of blood have moderate to strong correlations with lung cancer disease. Also, genetic risk, coughing of blood, passive smoker, chest pain, lung disease, and alcohol usage have moderate to strong correlations with obesity. 
+
+From the first KNN model that included all features with K setting as 8, we got relatively high precisions. We also proceeded with another KNN model that only included important features of enetic risk, chest pain, alcohol usage, obesity, smoking, coughing of blood, where we got a slightly higher prediction accruacy. 
+
