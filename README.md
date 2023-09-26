@@ -166,3 +166,6 @@ While our analysis provides valuable insights, it is essential to acknowledge ce
 - Yiran Wang: Focused on analyzing the BMI dataset; worked on incorporating the key information from the written report to the presentation slides. 
 
 Each group member has an equal contribution to this project in both the coding analysis and report writing process, where constant discussions have happened throughout the week.
+
+# Github Link
+- https://github.com/pourya-momtaz/CHL5230-Datathon1/tree/main
