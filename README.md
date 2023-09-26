@@ -111,8 +111,21 @@ In the lung cancer dataset, we applied KNN to all 10 features with k=3, using th
 
 **Machine Learning Analysis:
 
-- After adding the height and weight factors into the model, the model achieves an overall accuracy of 0.77 with k=20. This means the model correctly classified 77% BMI level based on health factors. 
+- To optimize the performance of our K-Nearest Neighbors (KNN) model for predicting BMI levels, we conducted an analysis to find the optimal value of K, the number of neighbors., We tested different K values ranging from 1 to 99 and evaluated their impact on the model's accuracy. The results showed an interesting trend: the accuracy of the model increased initially, reaching a local maximum of approximately 0.33. After this point, the accuracy started to decrease as K increased further. To select the optimal K, we considered both the elbow method and the maximum accuracy point. Based on these criteria, we determined the best K value for our KNN model. After selecting the optimal K value, we trained our KNN model on the training data and evaluated its performance on the test data. The results provided insights into the model's accuracy, precision, recall, and F1-score: Accuracy: 0.3223, Precision: 0.2417, Recall: 0.3223, F1-Score: 0.2407
+
+It's important to note that the relatively low evaluation metrics might be attributed to the nature of predicting BMI. BMI may not have significant correlations with factors other than height and weight, making it challenging to accurately predict using health-related features alone.
+
+
+- After including height and weight in our feature set, we evaluated the performance of the K-Nearest Neighbors (KNN) model. The results demonstrated a significant improvement in model accuracy and predictive power: Accuracy: 0.7706, Precision: 0.7916, Recall: 0.7706, F1-Score: 0.7593. These improved metrics reflect the enhanced capability of the model to predict BMI levels when considering height and weight as essential factors. Notably, height and weight are core elements in BMI calculations, and although their inclusion should theoretically lead to precise BMI predictions, our analysis suggests that the incorporation of additional factors may have contributed to the model's complexity and affected its accuracy.
 
 - According to the classification report, "underweight" has a precision of 0.99, while "severely obese" has a precision of 1.00. The precision with other levels is less precise, followed by healthy (0.74), overweight (0.73), and obese (0.80). This demonstrates the model correctly identifying individuals as underweight and severely obese. Recall measures indicate whether a model can recognize every instance of a class. In our data set, the recall of a severely obese case is only 0.08, which may be due to an extremely uncommon severely obese instance. The model performs a wonderful job of recognizing most of the instances of that class, with the exception of the seriously obese, whose recall is in the range of 0.52 to 0.93. 
 
 - From the first KNN model that included all features with K setting as 3, we got relatively high precisions with an average of 0.93. In another KNN model that only included important features, we observed slightly lower accuracies with an average of 0.91, thus we will proceed with the KNN model with 10 features, even though potential overfitting might occur. 
+
+
+# Individual Contributions
+- Pourya Momtaz: Led the group in terms of the overall structure, inluding coding; conducted the overall explanatory analysis and the modelling parts.
+- Xiaoxuan (Rose) Han: Focused on analyzing the lung cancer dataset; structured and worked on the written report based on analysis outputs from the coding.
+- Yiran Wang: Focused on analyzing the BMI dataset; worked on incorporating the key information from the written report to the presentation slides. 
+
+Each group member has an equal contribution to this project in both the coding analysis and report writing process, where constant discussions have happened throughout the week.
