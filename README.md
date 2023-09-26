@@ -129,6 +129,8 @@ It's important to note that linear regression is typically used for continuous d
 - When we conducted the linear regression analysis after removing height and weight from the dataset, we obtained the following results: Mean Squared Error (MSE): 48.1323, R-squared (R2) Score: -0.0011
 These results present a stark contrast to the previous linear regression analysis that included height and weight as features. In this case, the high MSE of approximately 48.1323 and the negative R-squared score of approximately -0.0011 indicate a poor performance of the model. The negative R-squared score suggests that the model did not capture the underlying relationships between the input features and the BMI values, resulting in predictions that did not align with the actual data
 
+- We rigorously tested different values of k for K-Means clustering, aiming to identify distinct clusters within the data. Unfortunately, none of these attempts resulted in clearly defined clusters. This outcome suggests that the BMI dataset, whether including or excluding height and weight as features, does not naturally form discrete clusters based on the available attributes. The lack of well-defined clusters could be due to the complexity of BMI as a continuous variable influenced by multiple factors, including height and weight.
+
 
 # Conclusion
 
@@ -143,6 +145,20 @@ To address this limitation, we incorporated height and weight into our feature s
 Furthermore, our linear regression analysis produced promising results. When height and weight were included as features, the linear regression model demonstrated a low Mean Squared Error (MSE) of approximately 1.0023 and a high R-squared (R2) score of approximately 0.9792. This outcome suggests that the model effectively predicts BMI when height and weight are considered. However, upon removing these factors, the linear regression model's performance declined significantly, with an elevated MSE of approximately 48.1323 and a negative R-squared score of approximately -0.0011. This drastic contrast underscores the strong correlation between BMI and height/weight, highlighting their fundamental role in BMI prediction.
 
 In summary, our findings emphasize that BMI is highly correlated with height and weight, while other features in the dataset have limited influence on BMI prediction. Height and weight are the primary drivers of accurate BMI predictions, and their exclusion from the analysis can significantly compromise model performance. These insights underscore the importance of considering height and weight when assessing body mass index and provide valuable guidance for future analyses in this domain.
+
+# Assumptions and Future Directions
+
+While our analysis provides valuable insights, it is essential to acknowledge certain assumptions and potential areas for future exploration:
+
+1. **Data Source Variability**: Our analysis focused on specific datasets related to obesity and lung cancer risk factors. Future research could incorporate data from diverse sources and populations to enhance the generalizability of findings.
+
+2. **Feature Engineering**: Further feature engineering and the incorporation of additional variables may improve BMI prediction and clustering outcomes.
+
+3. **Bias Considerations**: Future analyses should carefully consider and address potential biases, including gender imbalances, to ensure robust and equitable results.
+
+4. **Additional Predictive Models**: Exploring alternative machine learning models and techniques may offer new perspectives on BMI prediction and feature clustering.
+
+
 
 # Individual Contributions
 - Pourya Momtaz: Led the group in terms of the overall structure, inluding coding; conducted the overall explanatory analysis and the modelling parts.
