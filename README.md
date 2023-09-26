@@ -6,7 +6,7 @@
 - Xiaoxuan (Rose) Han
 - Yiran Wang
 
-## Public Health Data Analytics Datathon
+# Public Health Data Analytics Datathon
 
 This GitHub repository contains the code and resources for the CHL5230 Datathon1.
 
@@ -16,9 +16,61 @@ This datathon is dedicated to addressing the pressing challenge of obesity and i
 
 We are provided with two datasets for this task. The first dataset contains lung cancer risk factor data from Tikur Ambesa Hospital, enabling us to explore the influence of risk factors on lung cancer severity. The second dataset includes various public health factors that may affect BMI in Canada. Body Mass Index (BMI) is a globally recognized standard for assessing obesity in individuals and is crucial for evaluating their nutritional and physical health. We leverage these health factors to predict BMI levels since elevated BMI levels are often associated with certain cancerous conditions.
 
-## Methodology
 
-To simplify encoding, we first categorize BMI levels within the first dataset using predefined thresholds. We employ clustering techniques to address the questions and, for the initial question, train a classifier to establish a relationship.
+# Methodology
+
+## Data Exploration and Preprocessing
+
+Our methodology begins with data exploration and preprocessing to gain insights into the provided datasets and prepare them for further analysis. We initially load the datasets, handle missing values, and clean the data. In this process, we ensure that the data is in a format suitable for analysis.
+
+### Gender-Based Distribution Analysis
+
+We perform a gender-based distribution analysis to understand the distribution of various health-related features within the dataset. This analysis helps us identify potential differences in health attributes between males and females. We create histograms for features such as Age, Calorie Intake, Sugar Intake, Physical Activity, Fast Food Frequency, Screen Time, Height, Weight, and BMI, stratified by gender.
+
+### BMI Categorization
+
+To facilitate classification tasks, we categorize BMI values into five levels: Underweight, Healthy, Overweight, Obese, and Severely Obese. This categorization simplifies the BMI prediction problem.
+
+## Predictive Modeling for BMI
+
+Our first predictive modeling task involves predicting BMI levels using K-Nearest Neighbors (KNN) algorithms. We perform this task with and without the inclusion of Height and Weight features to investigate the impact of these variables on BMI prediction.
+
+### KNN with Height and Weight
+
+We split the data into training and testing sets and scale the features for better model performance. We employ the KNN algorithm with k=20, which represents the number of neighbors used for classification. The results include a confusion matrix and classification report, providing insights into the model's accuracy, precision, recall, and F1-score for each BMI category. We visualize the confusion matrix to illustrate the model's performance.
+
+### KNN without Height and Weight
+
+Similar to the previous task, we predict BMI levels using KNN, but this time, we exclude Height and Weight features. We again provide a confusion matrix and classification report to assess the model's performance.
+
+### Hyperparameter Tuning
+
+To optimize the KNN algorithm's hyperparameter (k), we perform a grid search to identify the best k value for our dataset. We visualize the relationship between k values and model accuracy to determine the optimal k for future use.
+
+## Predictive Modeling for Lung Cancer Severity
+
+In the second part of our analysis, we focus on predicting lung cancer severity based on various risk factors. We use the KNN algorithm for this task, aiming to classify the severity of lung cancer accurately.
+
+### KNN for Lung Cancer Severity
+
+We preprocess the data, including scaling the features and splitting the dataset into training and testing sets. We apply the KNN algorithm with k=3 to predict lung cancer severity. We present a confusion matrix and classification report to evaluate the model's performance.
+
+### Hyperparameter Tuning for Lung Cancer Severity
+
+Similar to the BMI prediction, we conduct hyperparameter tuning to find the optimal k value for the KNN algorithm in predicting lung cancer severity. We visualize the relationship between k values and model accuracy to determine the best k.
+
+## Additional Analysis: Feature Clustering
+
+In addition to predictive modeling, we explore feature clustering to uncover patterns and relationships within the data. We apply K-Means clustering to different combinations of features in both datasets.
+
+### K-Means Clustering for Dataset 1
+
+We perform K-Means clustering on various combinations of features from Dataset 1, visualizing the clusters in scatter plots. This analysis helps us identify natural groupings or patterns within the data.
+
+### K-Means Clustering for Dataset 2
+
+Similarly, we apply K-Means clustering to different feature combinations in Dataset 2 and visualize the resulting clusters. This analysis aids in understanding how risk factors for lung cancer correlate and form distinct groups.
+
 
 ## Data Engineering Process
 
@@ -28,7 +80,7 @@ The second dataset contains lung cancer risk factor data from Tikur Ambesa Hospi
 
 For both datasets, we initially exclude all missing values. Subsequently, we split the data into training and testing datasets and scale the features before applying KNN to each dataset.
 
-## Analysis
+# Analysis
 
 Our analysis comprises two parts: exploratory analysis and machine learning modeling analysis. We begin with exploratory data analysis to visualize patterns among explanatory variables, such as multicollinearities among different lung cancer risk factors or factors affecting obesity and BMI scores.
 
@@ -44,7 +96,7 @@ Initially, we excluded 'Height' and 'Weight' variables to avoid multicollinearit
 
 In the lung cancer dataset, we applied KNN to all 10 features with k=3, using the severity of lung cancer as the labeled data. We also experimented with a reduced number of features to compare prediction accuracies, focusing on Gender, Age, Air Pollution, Alcohol Usage, Genetic Risk, Obesity, and Smoking to mitigate multicollinearities. In both KNN models, we employed Euclidean distance as all the data are quantitative. Our results indicated that k=3 yielded the highest accuracies.
 
-## Findings
+# Findings
 
 **Exploratory Analysis:**
 
