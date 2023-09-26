@@ -100,6 +100,11 @@ In the lung cancer dataset, we applied KNN to all 10 features with k=3, using th
 
 **Exploratory Analysis:**
 
+
+- Upon analyzing our datasets, we observed potential gender bias in both the BMI and lung cancer datasets. In the BMI dataset, we found that there were more female participants than male participants. This gender imbalance could introduce bias into our analysis, as certain health-related factors may differ between genders.
+
+- Further investigation into the distribution of health-related features by gender revealed interesting findings. Despite the gender imbalance in the dataset, we found that health-related features, such as age, calorie intake, sugar intake, physical activity, fast food frequency, screen time, height, weight, and BMI, followed nearly identical distributions for both genders. This suggests that, in this particular dataset, the health-related factors we are analyzing are consistent across genders.
+
 - The correlation heatmap of the BMI dataset revealed that only 'Height' and 'Weight' demonstrated reasonably high correlations with BMI, while other parameters exhibited minimal correlation.
 
 - In the lung cancer dataset, the severity of lung cancer displayed correlations with specific risk factors, including genetic risk, chest pain, alcohol usage, obesity, smoking, and coughing of blood. Additionally, some risk factors exhibited correlations with obesity.
