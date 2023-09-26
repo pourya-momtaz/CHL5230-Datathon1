@@ -27,11 +27,11 @@ The BMI dataset contains 25,355 entries, comprising 14,896 females and 8,639 mal
 
 The dataset of lung cancer risk factors from Tikur Ambesa Hospital has discrete numerical data with 1000 patients and 11 crucial risk factors. 
 
-For both datasets, they were split into training and testing datasets, respectively. Also, their feactures were scaled before KNN was applied on each dataset. 
+For both datasets, all missing values were excluded at the beginning. They were split into training and testing datasets, respectively. Also, their feactures were scaled before KNN was applied on each dataset. 
 
 # Analysis
 
-Our analysis is composed of two parts: the explanatroy analysis and machine learning modelling analysis. We conducted the explanatory data analysis to visualize any obvious patterins in the explanatory variables, such as the multicollinearities among different lung cancer risk factors. 
+Our analysis is composed of two parts: the explanatroy analysis and the machine learning modelling analysis. We conducted the explanatory data analysis to visualize any patterins among the explanatory variables, such as the multicollinearities among different lung cancer risk factors or factors affecting obesity/BMI scores. 
 
 Explanatory analysis:
 
@@ -39,7 +39,7 @@ Explanatory analysis:
 
 Machine learning analysis:
 
-We used KNN on both datasets. 
+As we have labeled data of BMI score and lung cancer severity available in these two datasets, we applied KNN algorithms for both analysis to obtain high accuracy predictions.
 
 First, the K-Nearest Neighbours algorithm with k=18 is used in our analysis to forecast BMI levels. Due to the KNN method's superior performance, we divided the dataset into 70% training data and 30% testing data. 
 
@@ -47,8 +47,8 @@ Our first idea is to exclude the 'Height' and 'Weight' variables from the analys
 
 We begin by using the KNN estimator without height and weight. Only 30% of the time is accurate, so there is a weak relationship between BMI and other variables. Therefore, we include the height and weight components in our model for improved performance.
 
-Then, in the lung cancer datasts, we applied KNN on all features with k=3. We also tried another KNN with a reduced number of features to further compare their predicting accuracies. We continued with features of Gender, Age, Air Pollution, Alcohol Usage, Genetic Risk, Obesity, and Smoking to reduce multicolinearities. 
-
+Then, in the lung cancer dataset, we applied KNN on all 10 features with k=3 with the severity of lung cancer as the labelled data. We also tried another KNN with a reduced number of features to further compare their predicting accuracies. We continued with features of Gender, Age, Air Pollution, Alcohol Usage, Genetic Risk, Obesity, and Smoking to reduce multicolinearities. In both KNN models, as all the data are quantitive, we proceeded with the use of Euclidean distance. 
+On the plot of modelling accuracies vs. k values, We observed the accuracies remain the approximately highest when k=3, and thus proceeded k=3 to obtain our results. 
 
 # Findings
 
@@ -64,8 +64,7 @@ After adding the height and weight factors into the model, the model achieves an
 
 According to the classification report, "underweight" has a precision of 0.99, while "severely obese" has a precision of 1.00. The precision with other levels is less precise, followed by healthy (0.74), overweight (0.73), and obese (0.80). This demonstrates the model correctly identifying individuals as underweight and severely obese. Recall measures indicate whether a model can recognize every instance of a class. In our data set, the recall of a severely obese case is only 0.08, which may be due to an extremely uncommon severely obese instance. The model performs a wonderful job of recognizing most of the instances of that class, with the exception of the seriously obese, whose recall is in the range of 0.52 to 0.93. 
 
-
-From the first KNN model that included all features with K setting as 3, we got relatively high precisions. In another KNN model that only included important features, we observed slightly lower accuracies, thus we will proceed with the KNN model with 10 features.
+From the first KNN model that included all features with K setting as 3, we got relatively high precisions with an average of 0.93. In another KNN model that only included important features, we observed slightly lower accuracies with an average of 0.91, thus we will proceed with the KNN model with 10 features, even though potential overfitting might occur. 
 
 
 # Conclusion
