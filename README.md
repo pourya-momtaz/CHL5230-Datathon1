@@ -122,6 +122,27 @@ It's important to note that the relatively low evaluation metrics might be attri
 
 - From the first KNN model that included all features with K setting as 3, we got relatively high precisions with an average of 0.93. In another KNN model that only included important features, we observed slightly lower accuracies with an average of 0.91, thus we will proceed with the KNN model with 10 features, even though potential overfitting might occur. 
 
+- The linear regression analysis for the BMI dataset yielded the following results: Mean Squared Error (MSE): 1.0022, R-squared (R2) Score: 0.9792. These results indicate that the linear regression model performed exceptionally well in predicting BMI values. The low MSE and high R-squared score of approximately 0.9792 suggest that the model's predictions closely align with the actual BMI values.
+
+It's important to note that linear regression is typically used for continuous data, and in this case, we applied it specifically to the BMI dataset, which contains continuous BMI values. The strong performance of the model highlights its effectiveness in capturing the relationships between the input features and BMI.
+
+- When we conducted the linear regression analysis after removing height and weight from the dataset, we obtained the following results: Mean Squared Error (MSE): 48.1323, R-squared (R2) Score: -0.0011
+These results present a stark contrast to the previous linear regression analysis that included height and weight as features. In this case, the high MSE of approximately 48.1323 and the negative R-squared score of approximately -0.0011 indicate a poor performance of the model. The negative R-squared score suggests that the model did not capture the underlying relationships between the input features and the BMI values, resulting in predictions that did not align with the actual data
+
+
+# Conclusion
+
+In conclusion, our analyses using various machine learning techniques and statistical methods have provided valuable insights into the prediction of BMI (Body Mass Index) and its associated factors.
+
+First, we explored the distribution of BMI by gender, revealing that our dataset had a larger representation of females. While this gender imbalance could potentially introduce bias, we subsequently examined the distribution of health-related features by gender. Interestingly, we found that these features followed similar distributions for both males and females, indicating that health-related factors did not significantly differ between genders. This insight suggests that gender may not be a major confounding factor in our analysis.
+
+We proceeded to analyze the performance of a K-Nearest Neighbors (KNN) model for BMI prediction. Initially, we tested various values of k and observed an almost ascending graph of accuracy with a local maximum of around 0.33. Beyond this point, accuracy started to decrease, suggesting an optimal k value. The confusion matrix for this optimal k value revealed an accuracy of approximately 0.3223, precision of 0.2417, recall of 0.3223, and an F1-score of 0.2407. These relatively low evaluation metrics may be attributed to the limited correlation between BMI and factors other than height and weight.
+
+To address this limitation, we incorporated height and weight into our feature set, significantly enhancing the KNN model's performance. With height and weight as essential factors in BMI calculation, the KNN model achieved a notable accuracy of approximately 0.7706, precision of 0.7916, recall of 0.7706, and an F1-score of 0.7593. These improved metrics reflect the model's enhanced capability to predict BMI levels when considering height and weight as crucial factors.
+
+Furthermore, our linear regression analysis produced promising results. When height and weight were included as features, the linear regression model demonstrated a low Mean Squared Error (MSE) of approximately 1.0023 and a high R-squared (R2) score of approximately 0.9792. This outcome suggests that the model effectively predicts BMI when height and weight are considered. However, upon removing these factors, the linear regression model's performance declined significantly, with an elevated MSE of approximately 48.1323 and a negative R-squared score of approximately -0.0011. This drastic contrast underscores the strong correlation between BMI and height/weight, highlighting their fundamental role in BMI prediction.
+
+In summary, our findings emphasize that BMI is highly correlated with height and weight, while other features in the dataset have limited influence on BMI prediction. Height and weight are the primary drivers of accurate BMI predictions, and their exclusion from the analysis can significantly compromise model performance. These insights underscore the importance of considering height and weight when assessing body mass index and provide valuable guidance for future analyses in this domain.
 
 # Individual Contributions
 - Pourya Momtaz: Led the group in terms of the overall structure, inluding coding; conducted the overall explanatory analysis and the modelling parts.
